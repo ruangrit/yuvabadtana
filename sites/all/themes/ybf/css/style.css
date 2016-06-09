@@ -1,0 +1,1128 @@
+/*------------- Common -------------*/
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.7em;
+  font-family: Helvetica, Thonburi, Arial, sans-serif;
+  min-width: 960px;
+  margin: 0 auto; }
+
+.container {
+  width: 960px;
+  margin: 0 auto; }
+
+html body.admin-menu {
+  margin-top: 21px !important; }
+
+#tertiary-content {
+  padding: 50px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #f1f4f4; }
+
+#page-title {
+  font: normal 3em/1em "thaisans_neueregular";
+  margin-bottom: 40px; }
+
+a {
+  text-decoration: none;
+  color: #284583; }
+  a:hover {
+    color: #132d64;
+    text-decoration: underline !important; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "thaisans_neuebold";
+  line-height: 1.1em;
+  margin-bottom: 10px;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 34px; }
+
+h3 {
+  font-size: 28px; }
+
+h4 {
+  font-size: 24px; }
+
+#content-column {
+  margin-bottom: 5em; }
+
+.block .block-title {
+  color: #264480;
+  font-weight: normal;
+  margin-bottom: 30px; }
+
+.sidebar-second #main-content {
+  width: 600px;
+  margin-right: 50px; }
+
+#genesis-1c #sidebar-second {
+  width: 280px;
+  margin-left: -315px;
+  padding: 15px;
+  background-color: #f5f5f5; }
+
+/*------------- Font Face -------------*/
+@font-face {
+  font-family: 'thaisans_neueregular';
+  src: url("font/thaisansneue-regular-webfont.eot");
+  src: url("font/thaisansneue-regular-webfont.eot?#iefix") format("embedded-opentype"), url("font/thaisansneue-regular-webfont.woff") format("woff"), url("font/thaisansneue-regular-webfont.ttf") format("truetype"), url("font/thaisansneue-regular-webfont.svg#thaisans_neueregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'thaisans_neuelight';
+  src: url("font/thaisansneue-light-webfont.eot");
+  src: url("font/thaisansneue-light-webfont.eot?#iefix") format("embedded-opentype"), url("font/thaisansneue-light-webfont.woff") format("woff"), url("font/thaisansneue-light-webfont.ttf") format("truetype"), url("font/thaisansneue-light-webfont.svg#thaisans_neuelight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'thaisans_neuebold';
+  src: url("font/thaisansneue-bold-webfont.eot");
+  src: url("font/thaisansneue-bold-webfont.eot?#iefix") format("embedded-opentype"), url("font/thaisansneue-bold-webfont.woff") format("woff"), url("font/thaisansneue-bold-webfont.ttf") format("truetype"), url("font/thaisansneue-bold-webfont.svg#thaisans_neuebold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+table tbody {
+  border: none !important; }
+
+.ybf-table {
+  border: 0; }
+  .ybf-table .first-row {
+    padding-left: 0; }
+  .ybf-table tbody {
+    border: none !important; }
+  .ybf-table td {
+    border: none;
+    vertical-align: top !important; }
+  .ybf-table.col-2 td {
+    width: 45%; }
+    .ybf-table.col-2 td:first-child {
+      padding-right: 30px; }
+  .ybf-table.col-3 td {
+    width: 33%; }
+    .ybf-table.col-3 td:first-child {
+      padding-right: 20px; }
+  .ybf-table.col-4 td {
+    width: 22%; }
+
+.front .help, .front .messages-section, .front .breadcrumb-block, .front #page-title {
+  display: none; }
+
+.messages-section .container {
+  padding: 10px 0 0; }
+.messages-section .messages {
+  margin: 0; }
+
+/*
+.messages-section {
+background-color: #5fc5eb;
+	.messages { margin: 0;}
+}
+
+.page-node {
+	.messages-section { background-color: #fff;}
+}
+*/
+/*------------- Header -------------*/
+#header, #secondary-menu-wrapper,
+#secondary-menu, #secondary-content {
+  background-color: #5fc5eb; }
+
+#header {
+  padding-bottom: 27px; }
+  .front #header {
+    padding: 0;
+    margin: 0; }
+  #header .container {
+    position: relative; }
+
+#secondary-content {
+  margin-bottom: 25px; }
+  .section-student #secondary-content, .section-project #secondary-content, .section-join #secondary-content {
+    background: #5fc5eb url("images/cloud.png") no-repeat center bottom; }
+  .page-student-alumni #secondary-content {
+    background: #5fc5eb url("images/senior-key.png") no-repeat center 120px; }
+  .page-student-scholar #secondary-content {
+    background: #5fc5eb url("images/current-student-key.png") no-repeat center 120px; }
+
+/*------------- Donation -------------*/
+#block-block-9 {
+  position: absolute;
+  right: 0;
+  top: 105px;
+  z-index: 2; }
+
+/*------------- breadcrumb -------------*/
+.breadcrumb {
+  font-size: 13px; }
+
+.breadcrumb-block {
+  padding-top: 27px; }
+
+/*------------- Footer -------------*/
+#footer {
+  padding: 30px 0;
+  margin: 0;
+  color: #fff;
+  background-color: #274583; }
+  #footer a {
+    color: #fff; }
+
+.logo-footer {
+  float: left;
+  margin-top: 23px; }
+
+#footer .logo-footer {
+  z-index: 1; }
+
+.footer-menu {
+  float: right;
+  width: 600px;
+  clear: none;
+  margin: 15px 0 0;
+  z-index: 2; }
+  .footer-menu .menu li {
+    display: inline-block;
+    width: 155px;
+    margin: 0;
+    list-style: none;
+    font: normal 1.6em/1em "thaisans_neueregular"; }
+    .footer-menu .menu li a {
+      color: #3d78ad;
+      padding: 0 10px 0 0;
+      text-decoration: none; }
+      .footer-menu .menu li a:hover {
+        color: #274583;
+        text-decoration: underline; }
+    .footer-menu .menu li ::before {
+      display: inline-block;
+      margin-right: 5px;
+      content: " > "; }
+  .footer-menu .menu .menu-mlid-518, .footer-menu .menu .menu-mlid-522 {
+    width: 100px; }
+
+.i18n-en #footer .footer-menu {
+  width: auto;
+  margin-right: 25px; }
+  .i18n-en #footer .footer-menu .menu li {
+    width: auto;
+    margin-left: 40px; }
+
+/*------------- Menu -------------*/
+#main-menu-wrapper {
+  float: right;
+  clear: none;
+  width: auto;
+  padding-right: 150px;
+  margin: 35px 0 0;
+  /*
+  	width: 750px;
+  	margin: 55px 0 0;
+  */ }
+
+.i18n-en .language-switch-block {
+  margin-top: 60px;
+  float: right;
+  text-align: initial; }
+.i18n-en #main-menu-wrapper {
+  margin-top: 110px;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+#main-menu {
+  background: transparent; }
+  #main-menu li {
+    margin: 0 30px 0 0; }
+    #main-menu li a {
+      font: normal 1.8em/1em "thaisans_neueregular";
+      color: #3d78ad; }
+      #main-menu li a.active {
+        color: #274583;
+        font-family: thaisans_neuebold; }
+      #main-menu li a:hover {
+        color: #274583; }
+    #main-menu li.last {
+      margin: 0; }
+    #main-menu li.active-trail a {
+      color: #274583;
+      font-family: thaisans_neuebold; }
+  #main-menu .menu-511 a {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    width: 113px;
+    height: 41px;
+    text-indent: -999em;
+    background: url("images/home-donate-button.png") no-repeat left top; }
+    #main-menu .menu-511 a:hover {
+      background-position: 0 -51px; }
+
+/*------------- Main -------------*/
+.main {
+  background: url("images/footer-pattern2.png") no-repeat center bottom;
+  padding-bottom: 150px; }
+
+/*------------- Block -------------*/
+.change-block .block-title {
+  font: normal 4em/1.2em "thaisans_neueregular";
+  color: #284583;
+  margin-bottom: 50px;
+  text-align: center; }
+.change-block .content {
+  text-align: center; }
+  .change-block .content a {
+    padding: 0 27px; }
+    .change-block .content a:hover {
+      opacity: .7; }
+
+.top-menu {
+  padding: 10px 0 0;
+  float: right; }
+  .top-menu .menu li {
+    list-style: none;
+    display: inline-block; }
+    .top-menu .menu li a {
+      color: #3d78ad;
+      padding: 0 10px 0 0;
+      font-size: 13px;
+      text-decoration: none; }
+      .top-menu .menu li a:hover {
+        color: #274583; }
+  .top-menu .menu li:last-child a {
+    padding-right: 0; }
+
+/*------------- list-news -------------*/
+.list-news {
+  /*Inner*/ }
+  .list-news .item-list ul {
+    list-style: none; }
+  .list-news .node-content {
+    position: relative; }
+  .list-news .views-row {
+    -moz-box-shadow: 1px 1px 2px 1px #efefef;
+    -webkit-box-shadow: 1px 1px 2px 1px #efefef;
+    box-shadow: 1px 1px 2px 1px #efefef;
+    float: left;
+    width: 296px;
+    margin: 0 30px 30px 0;
+    border: 1px solid #ECEBEB;
+    height: 520px; }
+  .list-news .field-name-field-image {
+    margin: 0 0 20px; }
+  .list-news .field-name-title-field {
+    font: normal 1.35em/1.35em "thaisans_neueregular"; }
+    .list-news .field-name-title-field a {
+      text-decoration: none;
+      color: #284583; }
+      .list-news .field-name-title-field a:hover {
+        color: #132d64; }
+  .list-news .field-name-field-new {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 2px 5px;
+    background-color: #C76960;
+    color: #fff; }
+  .list-news .field-name-field-submitted {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #999;
+    margin: 5px 0 0; }
+  .list-news .field-name-body {
+    margin: 15px 0 0; }
+  .list-news .field-name-field-news-category .field-item {
+    margin: 5px 0; }
+    .list-news .field-name-field-news-category .field-item a {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+      font-size: 12px;
+      padding: 2px 5px;
+      background-color: #efefef;
+      color: #666; }
+  .list-news .field-name-title-field,
+  .list-news .field-name-field-submitted,
+  .list-news .field-name-field-news-category,
+  .list-news .field-name-body {
+    padding: 0 20px; }
+  .list-news .views-row-3, .list-news .views-row-6 {
+    margin-right: 0; }
+
+/*------------- List News Front -------------*/
+#block-views-news-block_1 {
+  float: left;
+  width: 610px;
+  margin: 0 50px 0 0; }
+  #block-views-news-block_1 .block-title {
+    color: #284583;
+    margin-bottom: 20px; }
+
+.list-news-front .views-row {
+  width: 280px;
+  margin-right: 45px; }
+.list-news-front .views-row-2 {
+  margin-right: 0; }
+.list-news-front .field-name-field-image img {
+  width: 280px; }
+
+/*------------- Want to be student -------------*/
+#block-block-2 {
+  float: left;
+  clear: none; }
+  #block-block-2 .block-title {
+    color: #284583;
+    margin-bottom: 20px; }
+  #block-block-2 .content a:hover {
+    opacity: .8; }
+  #block-block-2 .content img {
+    -moz-box-shadow: 1px 1px 2px 1px #efefef;
+    -webkit-box-shadow: 1px 1px 2px 1px #efefef;
+    box-shadow: 1px 1px 2px 1px #efefef; }
+  #block-block-2 .views-row-2 {
+    margin-right: 0; }
+
+/*------------- About us & Projects Front -------------*/
+.banner-front-block {
+  float: left;
+  width: 205px;
+  clear: none; }
+  .banner-front-block .content img {
+    display: block; }
+  .banner-front-block .content a:hover {
+    opacity: .8; }
+
+.i18n-en .banner-front-block {
+  background: url(images/bg-banner.png) no-repeat 40px 50px;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  text-align: right; }
+  .i18n-en .banner-front-block p {
+    margin: 0; }
+
+/*About Block*/
+#block-block-5 .block-title {
+  font-size: 36px; }
+#block-block-5 .content {
+  font-size: 16px;
+  line-height: 28px; }
+
+/*------------- Slideshow -------------*/
+#block-views-slideshow-block {
+  float: left;
+  position: relative;
+  clear: none;
+  width: 725px;
+  height: 340px;
+  margin-right: 30px;
+  margin-bottom: 60px; }
+  #block-views-slideshow-block .nivo-controlNav {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    z-index: 999; }
+
+#views-nivo-slider-slideshow-block {
+  width: 490px !important;
+  padding-left: 230px; }
+  #views-nivo-slider-slideshow-block .nivo-slice {
+    left: 230px !important; }
+
+.theme-default .nivo-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 231px;
+  padding: 30px 20px;
+  background-color: #284583; }
+  .theme-default .nivo-caption p {
+    padding: 0; }
+  .theme-default .nivo-caption a {
+    margin-bottom: 15px;
+    display: block !important;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    font-weight: bolds; }
+
+/*------------- Key Front -------------*/
+.key-block {
+  position: relative;
+  margin: 0; }
+  .key-block .field-name-field-description {
+    position: absolute;
+    top: 340px;
+    left: 0;
+    width: 280px;
+    font-size: 14px;
+    color: #284583; }
+    .key-block .field-name-field-description a {
+      display: block;
+      width: 193px;
+      height: 49px;
+      margin-top: 30px;
+      text-indent: -999em;
+      background: url("images/home-details-button.png") no-repeat left top; }
+      .key-block .field-name-field-description a:hover {
+        opacity: .8; }
+
+.god-hand {
+  position: absolute;
+  top: -375px;
+  right: -800px;
+  width: 240px;
+  height: 271px;
+  background: url("images/god-hand.png") no-repeat left top; }
+
+.student-block {
+  margin-bottom: 3.5em; }
+  .student-block .group-left {
+    position: relative;
+    float: left;
+    width: 540px; }
+    .student-block .group-left .field-name-field-student-link a {
+      position: absolute;
+      top: 25px;
+      left: 0;
+      padding: 25px;
+      font: normal 2em/1em "thaisans_neueregular";
+      color: #fff;
+      background-color: #00cc65;
+      opacity: .9; }
+      .student-block .group-left .field-name-field-student-link a:after {
+        content: " \279D "; }
+  .student-block .group-right {
+    position: relative;
+    float: left;
+    width: 190px;
+    height: 215px;
+    padding: 30px 20px 30px 210px;
+    color: #fff;
+    background: url("images/home-student2.jpg") no-repeat left top; }
+    .student-block .group-right a {
+      color: #fff; }
+
+.page-node .node-student .node-content {
+  -moz-box-shadow: 1px 1px 2px 1px #efefef;
+  -webkit-box-shadow: 1px 1px 2px 1px #efefef;
+  box-shadow: 1px 1px 2px 1px #efefef;
+  float: left;
+  width: 550px;
+  height: 100px;
+  padding: 25px 25px 90px 25px;
+  background: url("images/student-strip.png") no-repeat left bottom;
+  background-color: #e4f5fd; }
+.page-node .node-student .field-name-field-image img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  float: left; }
+.page-node .node-student .field-name-body {
+  padding-left: 130px; }
+
+/*------------- Pager -------------*/
+.item-list ul.pager {
+  padding: 30px 0 0; }
+  .item-list ul.pager li a {
+    font-size: 13px; }
+  .item-list ul.pager li.pager-current {
+    padding: 10px;
+    background: #5fc5eb;
+    color: #fff; }
+
+/*------------- Tag -------------*/
+.tag-block {
+  padding: 25px 0;
+  margin: 60px 0 0;
+  border-bottom: 1px dotted #ccc;
+  border-top: 1px dotted #ccc; }
+  .tag-block .views-row {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    list-style: none;
+    float: left;
+    padding: 10px;
+    margin: 0 15px 0 0;
+    background-color: #efefef; }
+  .tag-block .block-title {
+    font: normal 1.75em/1.35em "thaisans_neueregular";
+    margin: 0 0 15px; }
+
+/*------------- Node Content -------------*/
+.node h2, .node h3 {
+  /*margin-top: 30px;*/ }
+
+.group-content {
+  float: left;
+  width: 600px;
+  margin: 0 50px 0 0; }
+  .group-content img {
+    margin: 10px; }
+  .group-content .field-name-field-submitted {
+    margin: 0 0 20px;
+    color: #666; }
+
+.group-sidebar {
+  float: left;
+  width: 280px;
+  padding: 15px;
+  background-color: #f5f5f5; }
+  .group-sidebar .field-name-field-share {
+    margin-bottom: 25px; }
+    .group-sidebar .field-name-field-share h3 {
+      padding: 0 0 5px;
+      /*margin: 0 0 20px;*/
+      font: normal 1.75em/1.35em "thaisans_neueregular";
+      /*border-bottom: 1px dotted #ccc;*/ }
+    .group-sidebar .field-name-field-share .addthis_button_facebook,
+    .group-sidebar .field-name-field-share .addthis_button_twitter,
+    .group-sidebar .field-name-field-share .addthis_button_google_plusone_share {
+      margin-right: 30px !important; }
+  .group-sidebar .field-name-field-images {
+    margin-bottom: 25px;
+    overflow: hidden; }
+    .group-sidebar .field-name-field-images h3 {
+      padding: 0 0 5px;
+      /*margin: 0 0 20px;*/
+      font: normal 1.75em/1.35em "thaisans_neueregular";
+      /*border-bottom: 1px dotted #ccc;*/ }
+    .group-sidebar .field-name-field-images .field-item {
+      float: left;
+      margin: 0 17px 10px 0; }
+  .group-sidebar .field-name-field-attachment {
+    margin-bottom: 25px; }
+    .group-sidebar .field-name-field-attachment h3 {
+      padding: 0 0 5px;
+      /*margin: 0 0 20px;*/
+      font: normal 1.75em/1.35em "thaisans_neueregular";
+      /*border-bottom: 1px dotted #ccc;*/ }
+    .group-sidebar .field-name-field-attachment .field-item {
+      padding: 4px 0;
+      border-bottom: 1px dashed #333; }
+  .group-sidebar .field-name-field-another-blogs h3, .group-sidebar .field-name-field-another-alumni h3 {
+    padding: 0 0 5px;
+    /*margin: 0 0 20px;*/
+    font: normal 1.75em/1.35em "thaisans_neueregular";
+    /*border-bottom: 1px dotted #ccc;*/ }
+
+/*------------- List Magazine -------------*/
+.list-magazine {
+  margin-top: 50px; }
+  .list-magazine .item-list ul {
+    list-style: none;
+    padding-left: 80px; }
+  .list-magazine .views-row {
+    float: left;
+    width: 250px;
+    height: 330px;
+    margin: 0 30px 30px 0;
+    text-align: center; }
+  .list-magazine .field-name-field-magazine-cover,
+  .list-magazine .field-name-field-image {
+    margin-bottom: 15px; }
+    .list-magazine .field-name-field-magazine-cover img,
+    .list-magazine .field-name-field-image img {
+      border: 1px solid #ccc; }
+  .list-magazine .field-name-field-magazine-file,
+  .list-magazine .field-name-field-file {
+    margin-top: 15px; }
+    .list-magazine .field-name-field-magazine-file a,
+    .list-magazine .field-name-field-file a {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff;
+      background-color: #1abc9c; }
+  .list-magazine .field-name-title-field h3 {
+    font-size: 1.8em; }
+  .list-magazine .views-row-3, .list-magazine .views-row-6, .list-magazine .views-row-9 {
+    margin-right: 0; }
+
+.list-4-columns .views-row {
+  height: 550px; }
+
+.list-artwork {
+  position: relative; }
+  .list-artwork .ctools-auto-submit-full-form {
+    position: absolute;
+    top: -75px;
+    right: 0;
+    width: 130px; }
+  .list-artwork .views-exposed-widget {
+    width: 170px; }
+    .list-artwork .views-exposed-widget * {
+      float: left;
+      margin: 0 10px 0 0; }
+
+/*------------- Scholar List -------------*/
+.scholar-list {
+  margin-bottom: 60px; }
+  .scholar-list .views-row {
+    -moz-box-shadow: 1px 1px 2px 1px #efefef;
+    -webkit-box-shadow: 1px 1px 2px 1px #efefef;
+    box-shadow: 1px 1px 2px 1px #efefef;
+    float: left;
+    width: 418px;
+    height: 125px;
+    padding: 25px 25px 90px 25px;
+    margin: 0 23px 30px 0;
+    background: url("images/student-item-border.png") no-repeat left bottom;
+    background-color: #e4f5fd; }
+  .scholar-list .views-row-even {
+    margin-right: 0; }
+  .scholar-list .field-name-field-image img {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    width: 100px; }
+  .scholar-list .field-name-field-image img {
+    float: left;
+    margin: 0 30px 0 0; }
+  .scholar-list .field-name-title-field, .scholar-list .field-name-body,
+  .scholar-list .field-name-field-name {
+    padding-left: 130px; }
+  .scholar-list .field-name-title-field {
+    margin-bottom: 10px;
+    font: normal 1.75em/1.35em "thaisans_neueregular"; }
+  .scholar-list .field-name-field-name {
+    color: #999;
+    margin-bottom: 5px; }
+  .scholar-list .node {
+    margin: 0; }
+  .scholar-list .more-link a {
+    color: #323232;
+    text-decoration: underline; }
+
+.alumni .views-row {
+  background-color: #ffffff; }
+
+/*------------- Blog Student -------------*/
+#block-views-student-block_3 {
+  margin-top: 50px; }
+
+.list-story .views-row {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #666; }
+.list-story .field-name-field-image {
+  float: left; }
+.list-story .field-name-title-field {
+  padding-left: 130px;
+  margin-bottom: 12px;
+  font: normal 1.75em/1.35em "thaisans_neueregular"; }
+.list-story .field-name-body {
+  padding-left: 130px; }
+.list-story .node {
+  margin: 0; }
+
+/*------------- Sidebar -------------*/
+.sidebar .block-title {
+  padding: 0 0 5px;
+  /*margin: 0 0 20px;*/
+  font: normal 1.75em/1.35em "thaisans_neueregular";
+  /*border-bottom: 1px dotted #ccc;*/
+  margin-bottom: 10px; }
+
+.another-student .views-row {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 4px 0 10px 40px;
+  border-bottom: 1px dashed #ccc;
+  background: url("images/student-icon.png") no-repeat left top; }
+
+/*------------- Table of Projects -------------*/
+.ybf-project .first-row {
+  padding-left: 0; }
+.ybf-project td {
+  width: 260px;
+  padding: 0 30px;
+  border-right: 1px solid #ccc; }
+.ybf-project .last {
+  border: none; }
+.ybf-project a {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 1px 0px 0px #994466;
+  -webkit-box-shadow: 0px 1px 0px 0px #994466;
+  box-shadow: 0px 1px 0px 0px #994466;
+  color: #333;
+  display: block;
+  width: 180px;
+  margin: 50px auto;
+  padding: 7px 10px;
+  font-size: 15px;
+  text-align: center;
+  background: #99cc67; }
+  .ybf-project a:hover {
+    background-color: #749e51;
+    color: #336633; }
+
+/*------------- Table of about -------------*/
+.ybf-aboutus .first-row {
+  width: 160px;
+  padding-right: 40px; }
+.ybf-aboutus .second-row {
+  width: 450px;
+  padding-right: 40px; }
+.ybf-aboutus td {
+  padding-bottom: 50px; }
+
+.ybf-commitee .first-row {
+  width: 160px; }
+  .ybf-commitee .first-row strong {
+    font-size: 15px; }
+  .ybf-commitee .first-row p {
+    font-size: 13px; }
+.ybf-commitee .second-row {
+  width: 270px;
+  padding-right: 30px; }
+.ybf-commitee .third-row {
+  width: 270px; }
+
+.ybf-commit-2 {
+  width: 600px;
+  margin: 0 auto; }
+  .ybf-commit-2 .first-row {
+    width: 160px;
+    padding-right: 20px; }
+  .ybf-commit-2 .second-row {
+    width: 280px;
+    padding-right: 30px; }
+  .ybf-commit-2 .third-row {
+    width: 160px; }
+  .ybf-commit-2 strong {
+    font-size: 15px; }
+  .ybf-commit-2 p {
+    font-size: 13px; }
+
+.ybf-teacher.col-2 td {
+  padding: 0; }
+.ybf-teacher.col-2 .second-row {
+  padding-left: 40px; }
+.ybf-teacher.col-2 .first-row {
+  padding-right: 20px;
+  width: 30%; }
+
+.ybf-shcolar .second-row {
+  padding-left: 25px;
+  padding-right: 25px; }
+.ybf-shcolar .four-row {
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.ybf-share .first-row {
+  width: 280px; }
+
+/*----- Project Youth Page -----*/
+#node-21 hr {
+  margin: 50px 0;
+  border: none;
+  clear: both; }
+#node-21 .field-name-body img {
+  float: right;
+  margin-left: 130px; }
+#node-21 .field-name-body h2 {
+  margin-bottom: 40px; }
+#node-21 .field-name-body a {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 1px 0px 0px #994466;
+  -webkit-box-shadow: 0px 1px 0px 0px #994466;
+  box-shadow: 0px 1px 0px 0px #994466;
+  color: #333;
+  display: block;
+  width: 180px;
+  margin: 50px auto;
+  padding: 7px 10px;
+  font-size: 15px;
+  text-align: center;
+  background: #99cc67;
+  margin: 30px 0 0 0; }
+  #node-21 .field-name-body a:hover {
+    background-color: #749e51;
+    color: #336633; }
+
+#node-44 .field-name-body a, #node-46 .field-name-body a {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 1px 0px 0px #994466;
+  -webkit-box-shadow: 0px 1px 0px 0px #994466;
+  box-shadow: 0px 1px 0px 0px #994466;
+  color: #333;
+  display: block;
+  width: 180px;
+  margin: 50px auto;
+  padding: 7px 10px;
+  font-size: 15px;
+  text-align: center;
+  background: #99cc67;
+  font-size: 13px;
+  margin: 15px 0 15px 0; }
+  #node-44 .field-name-body a:hover, #node-46 .field-name-body a:hover {
+    background-color: #749e51;
+    color: #336633; }
+
+/*---- Contriblue Page ----*/
+#node-16 .field-name-body a.button {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 1px 0px 0px #994466;
+  -webkit-box-shadow: 0px 1px 0px 0px #994466;
+  box-shadow: 0px 1px 0px 0px #994466;
+  color: #333;
+  display: block;
+  width: 180px;
+  margin: 50px auto;
+  padding: 7px 10px;
+  font-size: 15px;
+  text-align: center;
+  background: #99cc67;
+  font-size: 13px;
+  margin: 25px 20px 15px 0;
+  display: inline-block; }
+  #node-16 .field-name-body a.button:hover {
+    background-color: #749e51;
+    color: #336633; }
+#node-16 hr {
+  margin: 50px 0;
+  border: none;
+  clear: both;
+  background-color: #ccc; }
+
+.ybf-money td {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc; }
+
+/*---- The future -----*/
+#node-19 hr {
+  margin: 50px 0;
+  border: none;
+  clear: both; }
+#node-19 .field-name-body h2 {
+  margin-bottom: 40px; }
+#node-19 .field-name-body .img {
+  float: right;
+  margin-left: 30px; }
+
+/*---- Join ----*/
+#node-22 hr {
+  margin: 50px 0;
+  border: none;
+  clear: both; }
+
+/*------ Contact Page ------*/
+.section-contact #block-system-main {
+  float: right;
+  width: 400px;
+  clear: none; }
+.section-contact #block-block-8 {
+  float: left;
+  width: 500px;
+  clear: none;
+  margin-right: 30px; }
+
+.btn-dowload {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 1px 0px 0px #994466;
+  -webkit-box-shadow: 0px 1px 0px 0px #994466;
+  box-shadow: 0px 1px 0px 0px #994466;
+  color: #333;
+  display: block;
+  width: 180px;
+  margin: 50px auto;
+  padding: 7px 10px;
+  font-size: 15px;
+  text-align: center;
+  background: #99cc67;
+  margin: 30px 20px 0 30px;
+  width: 240px;
+  float: left; }
+  .btn-dowload:hover {
+    background-color: #749e51;
+    color: #336633; }
+
+#block-block-14 {
+  margin: 0; }
+
+/* language-switch-block */
+.language-switch-block {
+  float: right;
+  clear: both;
+  margin: 0; }
+  .language-switch-block .content ul {
+    list-style: none;
+    margin: 0; }
+    .language-switch-block .content ul li {
+      display: inline-block;
+      margin-left: 5px;
+      opacity: 0.85; }
+      .language-switch-block .content ul li:hover {
+        opacity: 1; }
+    .language-switch-block .content ul li a {
+      display: inline-block;
+      width: 24px;
+      height: 18px;
+      text-indent: -999em;
+      background: url(images/language.png) no-repeat 0 -1px; }
+    .language-switch-block .content ul .th a {
+      background-position: 0 -42px; }
+    .language-switch-block .content ul li.active {
+      opacity: 1; }
+
+/* group-file-download */
+.group-file-download {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 4px solid #284583; }
+  .group-file-download .file-item {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5; }
+  .group-file-download .name {
+    padding-right: 150px; }
+  .group-file-download .download-file {
+    position: absolute;
+    right: 0;
+    top: 5px; }
+  .group-file-download .download-file a {
+    background-color: #00cc65;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 10px;
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    height: 33px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; }
+  .group-file-download .size {
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px; }
+
+.block-other-annual .view .views-row a:before {
+  content: '\003e\00a0\00a0'; }
+
+/* Front English */
+.front.i18n-en #secondary-content {
+  margin-bottom: 0; }
+.front.i18n-en .main {
+  display: none; }
+
+.i18n-en .banner-front-block {
+  width: auto;
+  float: none; }
+
+ul.nice-menu-down li {
+  border: 0;
+  background-color: transparent; }
+  ul.nice-menu-down li ul li.active-trail a, ul.nice-menu-down li ul li a.active, ul.nice-menu-down li ul li a.active-trail {
+    text-decoration: underline; }
+
+/* Nice Menu */
+ul.nice-menu-down > li {
+  background-color: transparent; }
+  ul.nice-menu-down > li.over > a {
+    text-decoration: underline;
+    color: #274583; }
+  ul.nice-menu-down > li.active-trail > a, ul.nice-menu-down > li > a.active {
+    font-family: thaisans_neuebold;
+    color: #274583; }
+
+ul.nice-menu-down ul li a.active {
+  color: #274583;
+  text-decoration: underline; }
+
+ul.nice-menu-down li.menuparent {
+  background: none !important;
+  position: relative; }
+  ul.nice-menu-down li.menuparent.over {
+    background: none; }
+  ul.nice-menu-down li.menuparent:after {
+    content: '\00a0';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #3d78ad;
+    position: absolute;
+    right: 0;
+    top: 20px; }
+
+ul.nice-menu a {
+  color: #3d78ad;
+  font: normal 1.8em/1em "thaisans_neueregular";
+  font-size: 25px; }
+  ul.nice-menu a:hover, ul.nice-menu a:focus, ul.nice-menu a.active {
+    color: #274583; }
+
+ul.nice-menu > li {
+  margin-right: 30px; }
+
+.block-nice-menus {
+  padding-right: 110px;
+  margin-top: 20px;
+  float: left; }
+
+ul.nice-menu ul {
+  border-top: 0;
+  top: 50px;
+  background-color: #9BE2FF;
+  border: 1px dashed #5fc3e8; }
+  ul.nice-menu ul:before {
+    content: '\00a0';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #9BE2FF;
+    position: absolute;
+    top: -8px;
+    left: 10px; }
+
+ul.nice-menu ul a {
+  font-family: Helvetica, Thonburi, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px;
+  border-bottom: 1px dashed #5FC5EB; }
+
+ul.nice-menu ul li.last a {
+  border-bottom: 0; }
+
+.menu-name-menu-footer-menu .menu li.active-trail a, .menu-name-menu-footer-menu .menu li.active a {
+  text-decoration: underline; }

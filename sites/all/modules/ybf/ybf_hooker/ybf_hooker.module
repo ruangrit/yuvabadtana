@@ -1,0 +1,51 @@
+<?php
+function ybf_hooker_views_pre_render(&$view) {
+  if ($view->name == 'annual' && $view->current_display == 'page') {
+      if (isset($view->result[0]->nid)) {
+      $last_year_nid = $view->result[0]->nid;
+      drupal_goto('node/'.$last_year_nid); 
+    }
+  }
+
+}
+function ybf_hooker_init() {
+  drupal_add_css(drupal_get_path('theme', 'ybf').'/css/dev.css');
+  if ($_GET['q'] == 'project/other') {
+    drupal_set_title('โครงการที่ร่วมกับภาคีต่างๆ เพื่อเป็นกลไกขยายผลและสร้างผลลัพธ์ทางสังคม');
+  }
+}
+
+function ybf_hooker_menu() {
+  $items = array();
+  $items['setting/project-description'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Setting Project Description', //page title
+    'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+    'page arguments' => array('setting_project_descption_form'), //put the name of the form here
+    'access arguments' => array('edit project description')
+  );
+  return $items;
+}
+function setting_project_descption_form($form, &$form_state) {
+  $form['project_description'] = array(
+    '#type' => 'textarea',
+    '#title' => 'Project descption',
+    '#default_value' => variable_get('project_description')
+  );
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+  return $form;
+}
+
+function setting_project_descption_form_submit($form, &$form_state) {
+   variable_set('project_description', $form['project_description']['#value']); 
+}
+
+function ybf_hooker_permission() {
+  return array(
+    'edit project description' => array(
+      'title' => t('Edit project description'),
+    ),
+  );
+}

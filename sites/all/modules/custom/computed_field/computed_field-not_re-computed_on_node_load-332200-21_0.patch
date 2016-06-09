@@ -1,0 +1,17 @@
+diff --git a/computed_field.module b/computed_field.module
+index c7bff05..69bb428 100644
+--- a/computed_field.module
++++ b/computed_field.module
+@@ -218,9 +218,10 @@ function computed_field_field_load($entity_type, $entities, $field, $instances,
+  * Implements field hook_field_prepare_view().
+  */
+ function computed_field_field_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items) {
+-  // Compute field values in case user is "previewing" an entity
++  $settings = $field['settings'];
++  // Compute field values in case user is "previewing" an entity or field values aren't stored in the database.
+   foreach ($entities as $etid => $entity) {
+-    if (isset($entity->op) && $entity->op == 'Preview') {
++    if ((isset($entity->op) && $entity->op == 'Preview') || !$settings['store']) {
+       _computed_field_compute_value($entity_type, $entity, $field, $instances, $langcode, $items[$etid]);
+     }
+   }

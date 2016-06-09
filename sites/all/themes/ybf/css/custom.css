@@ -1,0 +1,111 @@
+/* $Id: custom.css,v 1.1 2010/06/24 23:08:18 jmburnz Exp $ */
+
+/**********************************************************
+ *                 Custom Styles
+ **********************************************************/
+/**
+ * Here you can add custom stles for your theme that do not fit
+ * into one if the modular stylesheets.
+ */
+
+/* Workaround for Admin menu bar shadow */
+html body.admin-menu {
+  margin-top:45px !important;
+}
+
+.list-magazine .views-row {
+	width: 280px !important;
+	margin: 0 10px 30px 0 !important;
+}
+
+/* Change Font size */
+.section-magazine .list-magazine .field-name-title-field h3,
+.section-project .list-magazine .field-name-title-field h3{
+	font-size: 20px;
+}
+.view-literature .field-name-body,
+.view-artwork .field-name-body {
+	min-height: 115px;
+}
+
+/* active and active-trail decoration */
+.block-other-annual a.active,
+.field-name-field-another-blogs a.active,
+.top-menu .menu li.active-trail a,
+.top-menu .menu li.active a {
+	text-decoration: underline;
+	color: #274583;
+}
+
+/* View News */
+.view-news .node-news .field-name-field-image {
+	margin-bottom: 15px;
+}
+.view-news .node-news .field-name-field-image img {
+	display: block;
+}
+.view-news .node-news .field-name-title-field {
+	max-height: 90px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+/* Footer */
+#footer .container {
+  position: relative;
+}
+
+#footer .footer-menu {
+	float: none;
+	clear: none;
+	margin: 0;
+	position: absolute;
+	width: 600px;
+	right: 0;
+	top: -5px;
+}
+
+#footer .logo-footer {
+	font-size: 12px;
+	line-height: 1em;
+	float: none;
+	margin: 23px 0 0;
+	z-index: 999
+	
+}
+#contact-footer {
+	margin: 0 0 0 80px;
+}
+#contact-footer a {color: #e0e0e0}
+
+#footer-bottom {margin: 15px 0 0; overflow: hidden;}
+#footer-bottom .fb {
+	margin: 0 0 0 80px;	
+	float: left;
+}
+#footer-bottom .cc {
+	float: right;
+	margin: 0 20px 0 0;
+}
+#footer-bottom .fb a {
+	background: url(../css/images/ic-fb.png) no-repeat 0 5px;
+	padding: 0 0 0 30px;
+	height: 33px;
+	line-height: 33px;
+	display: block;
+}
+
+#footer-bottom .cc span {
+	float: left;
+	line-height: 33px;
+	margin: 0 10px 0 0;
+}
+
+/* About Team */
+.ybf-commit-2 tr td img {
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-ms-border-radius: 100%;
+	border-radius: 100%;
+	width: 100px;
+}

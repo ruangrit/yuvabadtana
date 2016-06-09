@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the od_preload_features feature.
+ */
+
+include_once 'od_preload_features.features.inc';

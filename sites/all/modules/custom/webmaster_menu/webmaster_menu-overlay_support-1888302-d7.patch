@@ -1,0 +1,194 @@
+--- webmaster_menu.config_page.inc	Fri Jan 16 05:21:36 1970
++++ webmaster_menu.config_page.inc	Fri Jan 16 05:21:36 1970
+@@ -60,6 +60,12 @@
+     '#default_value' => variable_get('webmaster_menu_extra_menu', '_no_menu_'),
+   );
+
++  $form['show_root'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Show for Root (User:1)'),
++    '#default_value' => variable_get('webmaster_menu_show_root', 1),
++  );
++
+   $form['roles'] = array(
+     '#type' => 'checkboxes',
+     '#title' => t('Display the menu for the following roles:'),
+@@ -94,6 +100,7 @@
+   // We could almost have used system_settings_form - but not quite, because we
+   // wanted to store the roles as a simple array of role ids.
+   variable_set('webmaster_menu_roles', $roles);
++  variable_set('webmaster_menu_show_root', $values['show_root']);
+   variable_set('webmaster_menu_menu', $values['menu']);
+   variable_set('webmaster_menu_add_home', $values['add_home']);
+   variable_set('webmaster_menu_home_menu', $values['home_menu']);
+--- webmaster_menu.css	Fri Jan 16 05:21:36 1970
++++ webmaster_menu.css	Fri Jan 16 05:21:36 1970
+@@ -6,16 +6,13 @@
+ .webmaster-menu {
+   background-color: #622;
+   height: 30px;
+-  width: auto;
+-  position: relative;
+-  z-index: 998; /* Just less then admin-menu but high enough for overlay */
++  padding-left: 9px;
++  padding-right: 15px;
+ }
+
+ .webmaster-menu ul.menu {
+   margin: 0;
+   padding: 0;
+-  padding-left: 9px;
+-  padding-right: 15px;
+ }
+
+ .webmaster-menu ul.menu li,
+--- webmaster_menu.install	Fri Jan 16 05:21:36 1970
++++ webmaster_menu.install	Fri Jan 16 05:21:36 1970
+@@ -8,6 +8,15 @@
+  * Implements hook_install().
+  */
+ function webmaster_menu_install() {
++  // Increase the wait to come after overlay
++  db_update('system')
++    ->fields(array(
++      'weight' => 1,
++    ))
++    ->condition('type', 'module')
++    ->condition('name', 'webmaster_menu')
++    ->execute();
++
+   // Tell user that the module was installed and how to configure it.
+   $t = get_t();
+   $link = l($t('Administration > Configuration > Webmaster menu'), 'admin/config/webmaster_menu');
+@@ -20,6 +29,7 @@
+  */
+ function webmaster_menu_uninstall() {
+   variable_del('webmaster_menu_roles');
++  variable_del('webmaster_menu_show_root');
+   variable_del('webmaster_menu_menu');
+   variable_del('webmaster_menu_add_home');
+   variable_del('webmaster_menu_add_logout');
+--- webmaster_menu.module	Fri Jan 16 05:21:36 1970
++++ webmaster_menu.module	Fri Jan 16 05:21:36 1970
+@@ -23,11 +23,60 @@
+ }
+ 
+ /**
++ * Implements hook_preprocess_html().
++ */
++function webmaster_menu_preprocess_html(&$vars) {
++  if (webmaster_menu_enabled()) {
++    $vars['classes_array'][] = 'webmaster-menu-enabled';  
++  }
++}
++
++/**
+  * Implements hook_page_alter().
+  */
+ function webmaster_menu_page_alter(&$page) {
++
++  $enabled = webmaster_menu_enabled();
++
++  // Do not show menu on dialog page in the "media" module.
++  if (!$enabled || $page['#theme'] == 'media_dialog_page') {
++    return '';
++  }
++
++  $page['page_top']['webmaster_menu'] = array(
++    '#markup' => webmaster_menu_output(),
++    '#weight' => -50,
++  );
++}
++
++function webmaster_menu_enabled($reset = FALSE) {
++  static $enabled = TRUE, $cached = FALSE;
+   global $user;
+ 
++  if ($reset) {
++    $cached = FALSE;
++  }
++
++  if ($cached) {
++    return $enabled;
++  }
++
++  // Do not display with core overlay, this creates duplicates menus, one in the
++  // main page and one in the overlay iframe
++  if (function_exists('overlay_get_mode')) {
++    if (overlay_get_mode() == 'child') {
++      $enabled = FALSE;
++    }
++  }
++
++  // Check if Root can see the menu but only when not inside the overlay
++  // If true there is no reason to continue.
++  if($enabled && (int)$user->uid === 1 && (bool)variable_get('webmaster_menu_show_root', 1)) {
++    $enabled = TRUE;
++    $cached = TRUE;
++    return $enabled;
++  }
++
+   // Check if user has access to webmaster menu
+   // This is done by intersecting the roles that are enabled in webmaster menu
+   // settings with the roles that the current user has (plus anonymous).
+@@ -39,18 +88,43 @@
+   $matched_roles = array_intersect($enabled_roles, $user_roles);
+ 
+   if (empty($matched_roles)) {
+-    return '';
++    $enabled = FALSE;
+   }
+ 
+-  // Do not show menu on dialog page in the "media" module.
+-  if ($page['#theme'] == 'media_dialog_page') {
+-    return '';
++  $cached = TRUE;
++  return $enabled;
+   }
+ 
+-  $page['page_top']['webmaster_menu'] = array(
+-    '#markup' => webmaster_menu_output(),
+-    '#weight' => -50,
+-  );
++/**
++ * Implementation of hook_overlay_child_initialize();
++ *
++ * Push down the overlay to prevent webmaster menu covering the top of the overlay,
++ * also integrates with admin menu.
++ */
++function webmaster_menu_overlay_child_initialize() {
++  global $user;
++  
++  // Add custom offset to prevent overlay content going behind additional menus
++  $offset = 0;    
++
++  // We cant use webmaster_menu_enabled(); because we already in the overlay and will always return false;
++  $enabled_roles = variable_get('webmaster_menu_roles', array());
++  $user_roles = array_keys($user->roles);
++
++  // Add anonymous (role id: 1)
++  array_push($user_roles, 1);
++  $matched_roles = array_intersect($enabled_roles, $user_roles);
++
++  if (!empty($matched_roles) || ((int)$user->uid === 1 && (bool)variable_get('webmaster_menu_show_root', 1))) {
++    $offset += 28;
++  }
++  if (user_access('Access administration menu')) {
++    $offset += 28;
++  }
++
++  if ($offset) {
++    drupal_add_css('body.overlay { padding-top: ' . $offset . 'px!important; }', array('type' => 'inline', 'group' => CSS_THEME+1));
++  }
+ }
+ 
+ /**
+@@ -129,7 +203,7 @@
+   drupal_add_css(drupal_get_path('module', 'webmaster_menu') . '/webmaster_menu.css');
+ 
+   $tree = $variables['tree'];
+-  $html = '<div class="webmaster-menu">';
++  $html = '<div class="webmaster-menu overlay-displace-top">';
+   $html .= theme('webmaster_menu_tree', array('tree' => $tree));
+   $html .= '</div>';
+   return $html;
