@@ -119,6 +119,10 @@
 	      <?php endif; // end hide in overlay ?>
     </div>
 
+	<?php if ($page['highlighted']): ?>
+		<div id="highlighted"><?php print render($page['highlighted']); ?></div>
+	<?php endif; ?>
+
    <?php if (!$page['secondary_content']): ?>
  	<div class="messages-section">
 		<div class="container clearfix">
@@ -172,9 +176,7 @@
 		      <div id="content-column">
 		        <div class="content-inner">
 		  
-		          <?php if ($page['highlighted']): ?>
-		            <div id="highlighted"><?php print render($page['highlighted']); ?></div>
-		          <?php endif; ?>
+
 		  
 		          <div id="main-content">
 		            <?php print render($title_prefix); ?>

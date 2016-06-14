@@ -119,6 +119,11 @@ h4{
 
 }
 
+.sr-only {
+	text-indent: -999em;
+	height: 0;
+}
+
 table{
 	tbody{
 		border: none !important;
@@ -1517,4 +1522,23 @@ ul.nice-menu ul li.last a {
 
 .menu-name-menu-footer-menu {
 	.menu li.active-trail a, .menu li.active a  { text-decoration: underline;}
+}
+
+/*------------------------------------*
+       Video Homepage
+*------------------------------------*/
+
+.block-feature-video {
+	margin-bottom: 0;
+	p {
+		margin: 0;
+		line-height: 0;
+	}
+}
+
+.fancybox-overlay {
+	.fancybox-skin {
+		box-shadow: none;
+		border-radius: 0;
+	}
 }

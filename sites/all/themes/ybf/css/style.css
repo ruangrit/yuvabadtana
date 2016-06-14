@@ -90,6 +90,10 @@ h4 {
   src: url("font/thaisansneue-bold-webfont.eot?#iefix") format("embedded-opentype"), url("font/thaisansneue-bold-webfont.woff") format("woff"), url("font/thaisansneue-bold-webfont.ttf") format("truetype"), url("font/thaisansneue-bold-webfont.svg#thaisans_neuebold") format("svg");
   font-weight: normal;
   font-style: normal; }
+.sr-only {
+  text-indent: -999em;
+  height: 0; }
+
 table tbody {
   border: none !important; }
 
@@ -1117,7 +1121,6 @@ ul.nice-menu ul {
 ul.nice-menu ul a {
   font-family: Helvetica, Thonburi, Arial, sans-serif;
   font-size: 14px;
-  line-height: 18px;
   padding: 10px;
   border-bottom: 1px dashed #5FC5EB; }
 
@@ -1126,3 +1129,18 @@ ul.nice-menu ul li.last a {
 
 .menu-name-menu-footer-menu .menu li.active-trail a, .menu-name-menu-footer-menu .menu li.active a {
   text-decoration: underline; }
+
+/*------------------------------------*
+       Video Homepage
+*------------------------------------*/
+.block-feature-video {
+  margin-bottom: 0; }
+  .block-feature-video p {
+    margin: 0;
+    line-height: 0; }
+
+.fancybox-overlay .fancybox-skin {
+  box-shadow: none;
+  border-radius: 0; }
+
+/*# sourceMappingURL=style.css.map */

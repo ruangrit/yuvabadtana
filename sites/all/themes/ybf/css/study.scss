@@ -1,0 +1,228 @@
+/*------------------------------------*
+         Webform Knowourselve
+*------------------------------------*/
+
+.block-study-quiz {
+  font-family: 'thaisans_neueregular';
+  position: relative;
+
+  .webform-client-form {
+    width: 600px;
+    margin: 0 auto;
+    label {
+      font-size: 22px;
+      font-weight: 100;
+      color: #827E7E;
+    }
+
+    .form-required {
+      color: #827E7E;
+    }
+  }
+
+  input.form-text {
+    height: 30px;
+    border: 0;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    font-size: 30px;
+    font-family: 'thaisans_neueregular';
+    color: #444;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .form-item {
+    width: 43%;
+    float: left;
+    margin: 0 3.5% 3em;
+    &.webform-component--stu-id { width: 93%;}
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+
+  .button-primary {
+    background-color: #FED831;
+    border: 0;
+    padding: 8px;
+    width: 93%;
+    border-radius: 5px;
+    font-family: 'thaisans_neueregular';
+    font-size: 30px;
+    color: #444;
+    display: inline-block;
+    cursor: pointer;
+    &:hover, &:focus {
+      background-color: #efcb30;
+    }
+  }
+}
+
+.block-study-quiz {
+  .form-item.webform-component-radios {
+    width: 93%;
+  }
+  .form-radios {
+    overflow: hidden;
+    .form-item {
+      float: left;
+      width: 50%;
+      margin: 0;
+      border-bottom: 4px solid #eee;
+      position: relative;
+      label {
+        font-family: 'thaisans_neueregular';
+        color: #827E7E;
+        font-size: 30px;
+        padding: 20px 0 30px 30px;
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border-bottom: 10px solid transparent;
+        margin-bottom: -3px;
+        cursor: pointer;
+      }
+    }
+    .form-item:first-child {
+      padding-left: 0;
+    }
+  }
+
+  input.form-radio {
+    position: absolute;
+    top: 22px;
+    left: 2px;
+  }
+
+  input[type=radio]:checked + label {
+    border-bottom: 10px solid #5FC5EB;
+  }
+}
+
+.block-study-quiz:before {
+  content: '\00a0';
+  position: absolute;
+  background: url(images/gp-doctor.png) no-repeat 0 0;
+  width: 191px;
+  height: 252px;
+  left: -30px;
+  top: 0;
+}
+
+.block-study-quiz:after {
+  content: '\00a0';
+  position: absolute;
+  background: url(images/gp-farmer.png) no-repeat 0 0;
+  width: 206px;
+  height: 206px;
+  right: -30px;
+  top: 0;
+}
+
+.study-graphic {
+  background-color: #5FC5EB;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  margin-top: -100px;
+}
+
+.bg-blue-table {
+  background: url(images/bg-blue-table.png) no-repeat center 0;
+  width: 100%;
+  height: 330px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+}
+
+.graphic-job {
+  background: url(images/graphic-job.png) no-repeat center 0;
+  width: 996px;
+  height: 462px;
+  position: relative;
+  margin-left: -10px;
+}
+
+.breadcrumb-block.-study-page {
+  position: relative;
+  z-index: 1;
+  padding-top: 0;
+}
+
+
+/*------------------------------------*
+       Page Knowourselve Quiz
+*------------------------------------*/
+
+.choice-whoiam {
+  margin-top: 40px;
+}
+
+.list-choice {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.item-choice {
+  display: inline-block;
+  font-family: 'thaisans_neueregular';
+  .sub-title {
+    font-size: 22px;
+    color: #444;
+    margin: 5px 0;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .hidden { opacity: 0;}
+  .img-wrapper {
+    height: 200px;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+}
+
+.item-choice .choice-wrapper {
+  min-height: 360px;
+  width: 250px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 10px 30px;
+  padding: 40px 7px 30px;
+  border: 1px dashed #40A1D6;
+  border-radius: 180px;
+  display: block;
+  &:hover, &:focus, &:active {
+    background-color: #E4F3FF;
+    text-decoration: none !important;
+  }
+}
+
+.btn-start {
+  background-color: #FED831;
+  color: #444;
+  border-radius: 100px;
+  padding: 10px 30px;
+  display: inline-block;
+  font-family: 'thaisans_neueregular';
+  font-size: 30px;
+}
+
+/*------------------------------------*
+       Modal Webform Knowourselve
+*------------------------------------*/
