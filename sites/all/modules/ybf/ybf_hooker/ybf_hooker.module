@@ -51,7 +51,11 @@ function ybf_hooker_permission() {
 }
 function ybf_hooker_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'webform_client_form_404') {
-    $form['submitted']['comment']['#access'] = False;
+    $form['submitted']['comment_junior']['#access'] = False;
+    $form['submitted']['comment_secondary']['#access'] = False;
+    $form['submitted']['comment_knowourselves']['#access'] = False;
+    $form['submitted']['comment_occupation']['#access'] = False;
+    $form['submitted']['comment_future']['#access'] = False;
     $form['#submit'][] = 'webform_knowourselves_submit';
   }
   if ($form_id == 'ybf_comment_knowourselves_form') {
