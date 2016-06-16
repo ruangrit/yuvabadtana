@@ -60,7 +60,7 @@ function ybf_hooker_form_alter(&$form, &$form_state, $form_id) {
   }
   if ($form_id == 'ybf_comment_knowourselves_form') {
     if (!isset($_SESSION['webform_knowourselves_sid'])) {
-       drupal_set_message('กรุณาลงทะเบียนก่อนทำแบบสอบถามค่ะ', 'error');
+       drupal_set_message('กรุณาเข้าสู่ระบบเพื่อทำแบบสอบถามค่ะ', 'error');
        drupal_goto('highschool/knowourselves');
       
     }
@@ -103,12 +103,12 @@ function ybf_comment_knowourselves_form($form, &$form_state) {
     '#ajax' => array(
       'callback' => 'comment_knowourselves_form_ajax_handler',
       'effect' => 'fade',
-      'wrapper' => 'comment-ajax',
-    ),
+      'wrapper' => 'comment-ajax'
+    )
   );
   $form['cancel'] = array(
     '#type' => 'button',
-    '#value' => 'ยกเลิก',
+    '#value' => 'ยกเลิก'
   );
   $form['#attached']['js'] = array(
     'data' => '',

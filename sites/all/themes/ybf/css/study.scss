@@ -126,15 +126,13 @@
 
 .study-graphic {
   background-color: #5FC5EB;
-  height: 500px;
+  height: auto;
   position: relative;
   overflow: hidden;
-  padding-top: 40px;
-  margin-top: -40px;
 }
 
 .bg-blue-table {
-  background: url(images/bg-blue-table.png) no-repeat center 0;
+  background: url(images/bg-blue-table.png) no-repeat center 20px;
   width: 100%;
   height: 330px;
   position: absolute;
@@ -263,6 +261,17 @@
       bottom: 0;
     }
   }
+
+  .messages {
+    text-align: left;
+    font-family: Helvetica, Thonburi, Arial, sans-serif;
+  }
+
+  #comment_label {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
   .form-type-textarea { text-align: left;}
   label {
     font-size: 30px;
@@ -272,7 +281,7 @@
     padding: 30px 50px 60px;
   }
 
-  input.form-submit {
+  input.form-submit, input.form-button {
     border: 0;
     background-color: #FED831;
     color: #444;
@@ -282,6 +291,7 @@
     font-family: 'thaisans_neueregular';
     font-size: 30px;
     margin: 10px 10px 0 0;
+    cursor: pointer;
     &.-cancel, &#edit-cancel {
       background-color: #eee;
     }

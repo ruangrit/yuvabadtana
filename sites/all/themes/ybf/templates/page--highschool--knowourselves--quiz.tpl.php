@@ -130,7 +130,7 @@
   </div>
   <div class="breadcrumb-block">
     <div class="container clearfix">
-      <?php print $breadcrumb; ?>
+      <?php //print $breadcrumb; ?>
     </div>
   </div>
 <?php endif; ?>
@@ -384,5 +384,11 @@
       }
 
     });
+    
+    $('#comment_form').find('#edit-cancel').prop("type", "button");
+    $('#comment_form').find('#edit-cancel').click(function () {
+      $.fancybox.close();
+    });
+    
   });
 </script>

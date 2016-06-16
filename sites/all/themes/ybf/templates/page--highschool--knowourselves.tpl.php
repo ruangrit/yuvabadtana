@@ -119,20 +119,21 @@
 	      <?php endif; // end hide in overlay ?>
     </div>
 
-	<?php if (!$page['secondary_content']): ?>
-		<div class="messages-section">
-			<div class="container clearfix">
-				<?php print $messages; ?>
-			</div>
-		</div>
-		<div class="breadcrumb-block -study-page">
-			<div class="container clearfix">
-				<?php //print $breadcrumb; ?>
-			</div>
-		</div>
-	<?php endif; ?>
+
 
 	<div class="study-graphic">
+		<?php if (!$page['secondary_content']): ?>
+			<div class="messages-section">
+				<div class="container clearfix">
+					<?php print $messages; ?>
+				</div>
+			</div>
+			<div class="breadcrumb-block -study-page">
+				<div class="container clearfix">
+					<?php print $breadcrumb; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="bg-blue-table"></div>
 		<div class="container">
 			<div class="graphic-job"></div>
