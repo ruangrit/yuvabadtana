@@ -130,7 +130,7 @@
   </div>
   <div class="breadcrumb-block">
     <div class="container clearfix">
-      <?php print $breadcrumb; ?>
+      <?php //print $breadcrumb; ?>
     </div>
   </div>
 <?php endif; ?>
@@ -375,6 +375,7 @@
         $('#comment_form').find('.section-thanks').hide();
         $('#comment_form').find('.section-comment-form').show();
         $('#comment_form').find('#edit-comment').val('');
+        $('#comment_form').find('#comment-ajax').html('');
 
       },
       afterClose: function () {
@@ -384,5 +385,11 @@
       }
 
     });
+    
+    $('#comment_form').find('#edit-cancel').prop("type", "button");
+    $('#comment_form').find('#edit-cancel').click(function () {
+      $.fancybox.close();
+    });
+    
   });
 </script>

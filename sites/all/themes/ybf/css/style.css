@@ -120,10 +120,8 @@ table tbody {
 .front .help, .front .messages-section, .front .breadcrumb-block, .front #page-title {
   display: none; }
 
-.messages-section .container {
-  padding: 10px 0 0; }
 .messages-section .messages {
-  margin: 0; }
+  margin: 10px 0; }
 
 /*
 .messages-section {
