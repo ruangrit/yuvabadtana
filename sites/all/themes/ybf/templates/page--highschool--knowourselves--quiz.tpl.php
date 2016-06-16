@@ -209,7 +209,7 @@
             <div class="choice-whoiam">
               <ul class="list-choice">
                 <li class="item-choice">
-                  <a class="various choice-wrapper" data-fancybox-type="iframe" href="http://sixfac.eduzones.com/test4/">
+                  <a class="various choice-wrapper" comment_to_field="13" data-fancybox-type="iframe" href="http://sixfac.eduzones.com/test4/">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/middle-school.png" alt="" width="215" height="185">
                     </div>
@@ -219,7 +219,7 @@
                   </a>
                 </li>
                 <li class="item-choice">
-                  <a class="various choice-wrapper" data-fancybox-type="iframe" href="http://ez.eduzones.com/test/testself.php">
+                  <a class="various choice-wrapper" comment_to_field="14" data-fancybox-type="iframe" href="http://ez.eduzones.com/test/testself.php">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/junior-school.png" alt="" width="231" height="191">
                     </div>
@@ -229,7 +229,7 @@
                   </a>
                 </li>
                 <li class="item-choice">
-                  <a class="various choice-wrapper" data-fancybox-type="iframe" href="http://ez.eduzones.com/test/testself.php">
+                  <a class="various choice-wrapper" comment_to_field="15" data-fancybox-type="iframe" href="http://ez.eduzones.com/test/testself.php">
                     <img src="/sites/all/themes/ybf/css/images/whoiam.png" alt="" width="221" height="189">
                     <div class="sub-title">รู้จักตัวตน</div>
                     <h3 class="title">ของเราให้มากขึ้น</h3>
@@ -237,7 +237,7 @@
                   </a>
                 </li>
                 <li class="item-choice">
-                  <a class="various choice-wrapper" data-fancybox-type="iframe"
+                  <a class="various choice-wrapper" comment_to_field="16" data-fancybox-type="iframe"
                      href="http://ez.eduzones.com/test/testself.php">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/what-job.png" alt="" width="214" height="188">
@@ -248,7 +248,7 @@
                   </a>
                 </li>
                 <li class="item-choice">
-                  <a class="various choice-wrapper" data-fancybox-type="iframe"
+                  <a class="various choice-wrapper" comment_to_field="17" data-fancybox-type="iframe"
                      href="http://ez.eduzones.com/test/testself.php">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/job-future.png" alt="" width="209" height="201">
@@ -302,7 +302,7 @@
 
 <?php endif; // end hide in overlay ?>
 
-<a id="comment_form_trigger" href="#comment_form">Comment form</a>
+<a id="comment_form_trigger" style="display:none" href="#comment_form">Comment form</a>
 
 <div style="display:none">
   <div id="comment_form" class="comment-form modal-wrapper">
@@ -311,7 +311,6 @@
         <h2 class="title">รู้สึกอย่างไรบอกกันบ้างน้า</h2>
         <?php
         $form = drupal_get_form('ybf_comment_knowourselves_form');
-        //print $_SESSION['webform_knowourselves_sid'];
         print drupal_render($form);
         ?>
       </div>
@@ -325,6 +324,11 @@
 <script>
   $ = jQuery;
   $(document).ready(function () {
+    var comment_to_field;
+    $(".various").click(function () {
+      comment_to_field = $(this).attr('comment_to_field'); 
+    });
+
     $(".various").fancybox({
       maxWidth: 800,
       maxHeight: 600,
@@ -335,14 +339,49 @@
       closeClick: false,
       openEffect: 'none',
       closeEffect: 'none',
-      onClosed: function () {
+      afterClose: function () {
         // Popup comment when close quize
-        console.log('close popup');
+        $("input[name='comment_to_field'").val(comment_to_field);
+        setTimeout(function(){ 
+
+          var comment_label = 'แบบทดสอบ';
+          if (comment_to_field == '13') {
+            comment_label += 'ปิ๊งไอเดียเรียนต่อมัธยมต้น';
+          }
+          else if (comment_to_field == '14') {
+            comment_label += 'ปิ๊งไอเดียเรียนต่อมัธยมปลาย';
+          }
+          else if (comment_to_field == '15') {
+            comment_label += 'รู้จักตัวตนของเราให้มากขึ้น';
+          }
+          else if (comment_to_field == '16') {
+            comment_label += 'อาชีพไหนใช่เรา';
+          }
+          else if (comment_to_field == '17') {
+            comment_label += 'ทางเลือกอาชีพแห่งอนาคต';
+          }
+          $('#comment_label').remove(); 
+          $('#ybf-comment-knowourselves-form').find("label[for='edit-comment']").after("<div id='comment_label'>" + comment_label + "</div>");
+          $('#comment_form_trigger').trigger('click');
+
+        }, 1000);
+ 
         
       }
     });
     
     $("#comment_form_trigger").fancybox({
+      beforeLoad: function () {
+        $('#comment_form').find('.section-thanks').hide();
+        $('#comment_form').find('.section-comment-form').show();
+        $('#comment_form').find('#edit-comment').val('');
+
+      },
+      afterClose: function () {
+        // Popup comment when close quize
+        console.log('close popup comment');
+        
+      }
 
     });
   });
