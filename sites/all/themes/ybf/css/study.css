@@ -100,8 +100,8 @@
   height: 500px;
   position: relative;
   overflow: hidden;
-  padding-top: 100px;
-  margin-top: -100px; }
+  padding-top: 40px;
+  margin-top: -40px; }
 
 .bg-blue-table {
   background: url(images/bg-blue-table.png) no-repeat center 0;
@@ -115,7 +115,7 @@
 .graphic-job {
   background: url(images/graphic-job.png) no-repeat center 0;
   width: 996px;
-  height: 462px;
+  height: 472px;
   position: relative;
   margin-left: -10px; }
 
@@ -180,8 +180,77 @@
   font-family: 'thaisans_neueregular';
   font-size: 30px; }
 
+.fancybox-inner {
+  overflow: visible !important; }
+
 /*------------------------------------*
        Modal Webform Knowourselve
 *------------------------------------*/
+.modal-wrapper {
+  font-family: 'thaisans_neueregular';
+  width: 700px;
+  margin: -15px -15px -36px;
+  background-color: #fff;
+  text-align: center; }
+  .modal-wrapper .title {
+    font-size: 40px;
+    padding: 60px 20px;
+    background-color: #5FC5EB;
+    color: #fff;
+    text-align: center;
+    position: relative; }
+    .modal-wrapper .title:before {
+      content: '\00a0';
+      background: url(images/gp-boy.png) no-repeat 0 0;
+      width: 127px;
+      height: 144px;
+      position: absolute;
+      left: 30px;
+      bottom: 0; }
+    .modal-wrapper .title:after {
+      content: '\00a0';
+      background: url(images/gp-girl.png) no-repeat 0 0;
+      width: 127px;
+      height: 131px;
+      position: absolute;
+      right: 30px;
+      bottom: 0; }
+  .modal-wrapper .form-type-textarea {
+    text-align: left; }
+  .modal-wrapper label {
+    font-size: 30px;
+    margin-bottom: 10px; }
+  .modal-wrapper form {
+    padding: 30px 50px 60px; }
+  .modal-wrapper input.form-submit {
+    border: 0;
+    background-color: #FED831;
+    color: #444;
+    border-radius: 6px;
+    padding: 5px 40px;
+    display: inline-block;
+    font-family: 'thaisans_neueregular';
+    font-size: 30px;
+    margin: 10px 10px 0 0; }
+    .modal-wrapper input.form-submit.-cancel, .modal-wrapper input.form-submit#edit-cancel {
+      background-color: #eee; }
+  .modal-wrapper textarea {
+    height: 150px;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    padding: 10px;
+    font-size: 30px;
+    border: 2px solid #e5e5e5;
+    font-family: 'thaisans_neueregular'; }
+  .modal-wrapper ::-webkit-input-placeholder {
+    font-family: 'thaisans_neueregular'; }
+  .modal-wrapper :-moz-placeholder {
+    /* Firefox 18- */
+    font-family: 'thaisans_neueregular'; }
+  .modal-wrapper ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: 'thaisans_neueregular'; }
+  .modal-wrapper :-ms-input-placeholder {
+    font-family: 'thaisans_neueregular'; }
 
 /*# sourceMappingURL=study.css.map */

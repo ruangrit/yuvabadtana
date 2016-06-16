@@ -302,6 +302,26 @@
 
 <?php endif; // end hide in overlay ?>
 
+<a id="comment_form_trigger" href="#comment_form">Comment form</a>
+
+<div style="display:none">
+  <div id="comment_form" class="comment-form modal-wrapper">
+    <div class="modal-detail-wrapper">
+      <div class="section-comment-form">
+        <h2 class="title">รู้สึกอย่างไรบอกกันบ้างน้า</h2>
+        <?php
+        $form = drupal_get_form('ybf_comment_knowourselves_form');
+        //print $_SESSION['webform_knowourselves_sid'];
+        print drupal_render($form);
+        ?>
+      </div>
+      <div class="section-thanks">
+        <h2 class="title">ขอบคุณนะคะ</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   $ = jQuery;
   $(document).ready(function () {
@@ -314,7 +334,16 @@
       autoSize: false,
       closeClick: false,
       openEffect: 'none',
-      closeEffect: 'none'
+      closeEffect: 'none',
+      onClosed: function () {
+        // Popup comment when close quize
+        console.log('close popup');
+        
+      }
+    });
+    
+    $("#comment_form_trigger").fancybox({
+
     });
   });
 </script>
