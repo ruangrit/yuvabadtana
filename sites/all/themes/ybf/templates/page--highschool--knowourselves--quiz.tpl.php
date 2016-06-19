@@ -395,7 +395,7 @@
 		  $('#ybf-comment-knowourselves-form').find("label[for='edit-comment']").after("<div id='comment_label'>" + comment_label + "</div>");
 		  $('#comment_form_trigger').trigger('click');
 
-                  }, 1000);
+                  }, 100);
 		}else{
 		}
          }, 1000);
