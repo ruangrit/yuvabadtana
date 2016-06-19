@@ -1132,10 +1132,8 @@ ul.nice-menu ul li.last a {
        Video Homepage
 *------------------------------------*/
 .block-feature-video {
-  margin-bottom: 0; }
-  .block-feature-video p {
-    margin: 0;
-    line-height: 0; }
+  margin-bottom: 0;
+  font-family: 'thaisans_neueregular'; }
 
 .fancybox-overlay .fancybox-skin {
   box-shadow: none;

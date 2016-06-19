@@ -130,7 +130,7 @@
   </div>
   <div class="breadcrumb-block">
     <div class="container clearfix">
-      <?php //print $breadcrumb; ?>
+      <?php print $breadcrumb; ?>
     </div>
   </div>
 <?php endif; ?>
@@ -229,7 +229,7 @@
                   </a>
                 </li>
                 <li class="item-choice">
-                  <a class="various choice-wrapper" comment_to_field="15" data-fancybox-type="iframe" href="http://ez.eduzones.com/test/testself.php">
+                  <a class="various choice-wrapper" comment_to_field="15" data-fancybox-type="iframe" href="http://ez.eduzones.com/future/">
                     <img src="/sites/all/themes/ybf/css/images/whoiam.png" alt="" width="221" height="189">
                     <div class="sub-title">รู้จักตัวตน</div>
                     <h3 class="title">ของเราให้มากขึ้น</h3>
@@ -238,7 +238,7 @@
                 </li>
                 <li class="item-choice">
                   <a class="various choice-wrapper" comment_to_field="16" data-fancybox-type="iframe"
-                     href="http://ez.eduzones.com/test/testself.php">
+                     href="http://ez.eduzones.com/testyourself/">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/what-job.png" alt="" width="214" height="188">
                     </div>
@@ -249,7 +249,7 @@
                 </li>
                 <li class="item-choice">
                   <a class="various choice-wrapper" comment_to_field="17" data-fancybox-type="iframe"
-                     href="http://ez.eduzones.com/test/testself.php">
+                     href="http://sixfac.eduzones.com/future/">
                     <div class="img-wrapper">
                       <img src="/sites/all/themes/ybf/css/images/job-future.png" alt="" width="209" height="201">
                     </div>
@@ -316,6 +316,24 @@
       </div>
       <div class="section-thanks">
         <h2 class="title">ขอบคุณนะคะ</h2>
+        <div>
+           <h2>แชร์ให้เพื่อน</h2>
+           <!-- AddThis Button BEGIN -->
+           <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+             <a class="addthis_button_facebook"></a>
+             <a class="addthis_button_twitter"></a>
+             <a class="addthis_button_google_plusone_share"></a>
+           </div>
+           <script type="text/javascript">var addthis_config = {"data_track_addressbar":true, "pubid":"ra-530d8a0570066cb1"};</script>
+           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#async=1"></script>
+           <script type="text/javascript">
+           // Call this function once the rest of the document is loaded
+           jQuery(document).ready( function() {
+             addthis.init()
+           });
+           </script>
+          <!-- AddThis Button END -->
+        </div>
       </div>
     </div>
   </div>
@@ -327,9 +345,71 @@
     var comment_to_field;
     $(".various").click(function () {
       comment_to_field = $(this).attr('comment_to_field'); 
-    });
+    }); 
+    
+    var win;
+    function popup (url) {
+      var width = screen.width-150;
+      var height = screen.height-150;
+      var left = 75;
+      var top = 50;
+      params  = 'width='+width;
+      params += ', height='+height;
+      params += ', top='+top+', left='+left
+      params += ', fullscreen=yes';
 
-    $(".various").fancybox({
+      win=window.open(url,'windowname4', params);
+      if (window.focus) {win.focus()}
+      checkWindowClosed()
+        return false;
+      }
+
+      function checkWindowClosed(){
+        var timer = setInterval(function() {
+		console.log('check');
+		if(win.closed) {
+		  clearInterval(timer);
+		  console.log('window popup close')
+
+		// Popup comment when close quize
+		$("input[name='comment_to_field'").val(comment_to_field);
+		setTimeout(function(){ 
+
+		  var comment_label = 'แบบทดสอบ';
+		  if (comment_to_field == '13') {
+		    comment_label += 'ปิ๊งไอเดียเรียนต่อมัธยมต้น';
+		  }
+		  else if (comment_to_field == '14') {
+		    comment_label += 'ปิ๊งไอเดียเรียนต่อมัธยมปลาย';
+		  }
+		  else if (comment_to_field == '15') {
+		    comment_label += 'รู้จักตัวตนของเราให้มากขึ้น';
+		  }
+		  else if (comment_to_field == '16') {
+		    comment_label += 'อาชีพไหนใช่เรา';
+		  }
+		  else if (comment_to_field == '17') {
+		    comment_label += 'ทางเลือกอาชีพแห่งอนาคต';
+		  }
+		  $('#comment_label').remove(); 
+		  $('#ybf-comment-knowourselves-form').find("label[for='edit-comment']").after("<div id='comment_label'>" + comment_label + "</div>");
+		  $('#comment_form_trigger').trigger('click');
+
+                  }, 1000);
+		}else{
+		}
+         }, 1000);
+       }
+
+    $(".various").click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      var url = $(this).attr('href');
+      popup(url);
+
+    });
+  
+    $(".variousxxx").fancybox({
       maxWidth: 800,
       maxHeight: 600,
       fitToView: false,
