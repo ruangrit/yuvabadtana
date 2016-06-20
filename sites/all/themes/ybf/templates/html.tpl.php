@@ -39,6 +39,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"
   <?php print $rdf_namespaces; ?>>
 <head profile="<?php print $grddl_profile; ?>">
+  <?php
+    if ($_GET['q'] == 'highschool/knowourselves/quiz' || $_GET['q'] == 'highschool/knowourselves') {
+      $url_host = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
+      $og_title = "แบบทดสอบ มารู้จักตัวเองกันเถอะ - มูลนิธิยุวพัฒน์";
+      $og_url = $url_host.'/highschool/knowourselves';
+      $og_description = "น้องๆ วัยมัธยมอาจจะกําลังมีคําถามกับตัวเองว่าเราจะไปทางไหนต่อดีเมื่อถึงช่วงที่ต้องเลือกทางเดินของชีวิต บางคนอาจกําลังลังเลไม่แน่ใจ บางคนอาจกําลังสับสน ไม่รู้ว่าเราเหมาะกับสิ่งไหน ลองใช้แบบทดสอบเหล่านี้ เป็นเครื่องมือที่จะทําให้เรามองเห็นตัวเองได้ชัดขึ้น";
+      $og_image = $url_host."/highschool/knowourselves";
+      ?>
+        <meta property="og:title" content="<?php print $og_title;?>" />
+        <meta property="og:description" content="<?php print $og_description;?>" />
+        <meta property="og:url" content="<?php print $og_url; ?>" />
+        <meta property="og:image" content="<?php print $og_image; ?>" />
+        <script>
+          var og_title = '<?php print $og_title;?>';
+          var og_url = '<?php print $og_url;?>';
+          setTimeout(function(){
+            addthis.update('share', 'url', og_url);
+            addthis.update('share', 'title', og_title);
+
+          }, 3000);
+        </script>
+      <?php
+    }
+
+  ?>
   <?php print $head; ?>
   <title><?php print t($head_title); ?></title>
   <?php print $styles; ?>
