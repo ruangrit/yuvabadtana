@@ -57,6 +57,22 @@ function ybf_hooker_form_alter(&$form, &$form_state, $form_id) {
     $form['submitted']['comment_occupation']['#access'] = False;
     $form['submitted']['comment_future']['#access'] = False;
     $form['#submit'][] = 'webform_knowourselves_submit';
+    drupal_add_js("
+      jQuery('document').ready(function () {
+            var elements = document.getElementsByTagName('input');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].oninvalid = function(e) {
+                    e.target.setCustomValidity('');
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity('กรุณาใส่ข้อมูลให้ครบนะจ๊ะ');
+                    }
+                };
+                elements[i].oninput = function(e) {
+                    e.target.setCustomValidity('');
+                };
+            }
+      });
+    ", "inline");
   }
   if ($form_id == 'ybf_comment_knowourselves_form') {
     if (!isset($_SESSION['webform_knowourselves_sid'])) {
@@ -68,7 +84,7 @@ function ybf_hooker_form_alter(&$form, &$form_state, $form_id) {
 
       jQuery(document).ajaxComplete(function(){
         console.log('form submit success');
-        if (!$('#comment_form').find('.error').length) {
+        if (!$('#comment_form').find('#comment-ajax').find('#comment-error').length) {
           $('#comment_form').find('.section-thanks').show();
           $('#comment_form').find('.section-comment-form').hide();
         
@@ -129,8 +145,12 @@ function comment_knowourselves_form_ajax_handler(&$form, &$form_state) {
   webform_submission_update($node, $submission);
 
   if ($comment != '') {
+    return "<div id='comment-ajax'></div>";
 
   }
-  return "<div id='comment-ajax'></div>";
+  else {
+    return "<div id='comment-ajax'><div id='comment-error'></div></div>";
+
+  }
 
 }
