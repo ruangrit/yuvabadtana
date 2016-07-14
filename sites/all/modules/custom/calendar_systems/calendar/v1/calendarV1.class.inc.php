@@ -120,7 +120,8 @@ class cmfcCalendarV1 extends cmfcClassesCoreStandAlone{
 	function phpGetDate($timestamp=null) {
 		if (is_null($timestamp)) {
 			if (!empty($this->_timeZoneInfo)) {
-				$timestamp=gmmktime()+$this->_timeZoneInfo['offset'];
+				//$timestamp=gmmktime()+$this->_timeZoneInfo['offset'];
+				$timestamp=time()+$this->_timeZoneInfo['offset'];
 				$r=array(
 					'seconds' => gmdate('s', $timestamp),
 					'minutes' => gmdate('i', $timestamp),
@@ -149,7 +150,8 @@ class cmfcCalendarV1 extends cmfcClassesCoreStandAlone{
     function phpDate($format, $timestamp=null) {
         if (is_null($timestamp) or empty($timestamp)) {
             if (!empty($this->_timeZoneInfo)) {
-                $timestamp=gmmktime()+$this->_timeZoneInfo['offset'];
+                //$timestamp=gmmktime()+$this->_timeZoneInfo['offset'];
+                $timestamp=time()+$this->_timeZoneInfo['offset'];
                 $r=gmdate($format, $timestamp);
             } else {
                 $timestamp=mktime();
