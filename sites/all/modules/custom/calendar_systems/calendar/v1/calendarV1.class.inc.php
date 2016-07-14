@@ -167,10 +167,11 @@ class cmfcCalendarV1 extends cmfcClassesCoreStandAlone{
 	
 	function phpTime() {
 		if (!empty($this->_timeZoneInfo)) {
-			$timestamp=gmmktime()+$this->_timeZoneInfo['offset'];
+			$timestamp=time()+$this->_timeZoneInfo['offset'];
 		} else {
 			$timestamp=time();
 		}
+dpm($timestamp);
 		return $timestamp;
 	}
 	
